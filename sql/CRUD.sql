@@ -11,6 +11,7 @@ commit;
 -- select ( login )
 select no, name from users where email='bsjxer@naver.com' and password='1234';
 
+select * from board where no > 27;
 
 -- board
 
@@ -33,8 +34,8 @@ select * from(select no, title, hit, reg_date, depth, name, users_no, rownum as 
 from(	select a.no, a.title, a.hit, to_char(a.reg_date, 'yyyy-mm-dd hh:mi:ss') as reg_date, a.depth, b.name, a.users_no
 				from board a, users b
 				 where a.users_no = b.no
-				order by group_no desc, order_no asc))
-				where (2-1)*2+1 <= rn and rn <= 2*2;
+				order by group_no desc, order_no asc));
+				where (5-1)*5+1 <= rn and rn <= 5*5;
 
 
 -- 새글
@@ -48,6 +49,11 @@ insert into board values( board_seq.nextval, '짬뽕싫어', '냉무', sysdate, 
 																	 	4, --부모글 순서 + 1
 																	    2, --부모글 깊이 + 1 
 																		2);
+
+
+
+
+
 
 
 commit;

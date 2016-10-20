@@ -22,14 +22,22 @@ public class ListAction implements Action {
 		
 		BoardDao dao = new BoardDao();
 		
-		List<BoardVo> list = dao.getList(page, LIST_SIZE);
+		List<BoardVo> list = dao.getList(page, PAGE_SIZE);
 		
 		int totalCount = dao.getTotalCount();
 		
+		int startPage = ( (int)(page-1)/PAGE_SIZE )*PAGE_SIZE + 1;
+		int endPage = ( (int)(page-1)/PAGE_SIZE )*PAGE_SIZE + 5;		
+		int totalPage = (totalCount-1)/PAGE_SIZE + 1;
+		
 		request.setAttribute( "list", list );
-		request.setAttribute("totalCount", totalCount);
-		request.setAttribute("currentPage", page);
+		request.setAttribute( "totalCount", totalCount);
+		request.setAttribute( "currentPage", page);
 		request.setAttribute( "listSize", LIST_SIZE );
+		request.setAttribute( "pageSize", PAGE_SIZE);
+		request.setAttribute( "startPage", startPage );
+		request.setAttribute( "endPage" , endPage );
+		request.setAttribute( "totalPage", totalPage);
 		
 		WebUtil.forward(request, response, "/WEB-INF/views/board/list.jsp");
 	}
