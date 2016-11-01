@@ -16,13 +16,13 @@
 			<div id="guestbook">
 				<form action="/mysite3/gb" method="post">
 					<input type="hidden" name="a" value="add">
-					<table>
-						<tr>
-							<td>이름</td><td><input type="text" name="name"></td>
-							<td>비밀번호</td><td><input type="password" name="pass"></td>
+					<table class="main">
+						<tr class="ai">
+							<td >이름</td><td><input type="text" name="name"></td>
+							<td >비밀번호</td><td><input type="password" name="pass"></td>
 						</tr>
 						<tr>
-							<td colspan=4><textarea name="content" id="content"></textarea></td>
+							<td colspan=4><textarea name="content" ></textarea></td>
 						</tr>
 						<tr>
 							<td colspan=4 align=right><input type="submit" VALUE=" 확인 "></td>
@@ -32,7 +32,7 @@
 				<c:set var="count" value="${fn:length(list) }"/>
 				<c:forEach items="${list }" var="vo" varStatus="status">
 				<br>
-					<table width="510" border="1">
+					<table class="bottom" >
 						<tr>
 							<td>[${count - status.index }]</td>
 							<td>${vo.name }</td>
@@ -44,7 +44,7 @@
 								${fn:replace(vo.content, newLine, "<br>") }
 							</td>
 						</tr>
-				</table>
+					</table>
 				</c:forEach>
 				<br>
 			</div>

@@ -4,11 +4,18 @@
 #guestbook			{ margin:20px auto;	width:540px; }
 
 #guestbook form, 
-#guestbook table	{ width:100% }
+#guestbook table	{ width:100%; border:0 }
 
-#guestbook table,	
-#guestbook table td { border:1px solid #333 }
-#guestbook table td { padding:5px }
+#guestbook table td { padding:5px}
+
+#guestbook .main { border:1px solid #80589f; border-radius:8px }
+#guestbook .main td { border:0 #333; font-color:#523867; margin:100px auto} 
+#guestbook .main textarea { width:100%; height:100px; }
+
+#guestbook .ai { font-size:15px; font-weight:bold; color:#A880C6}
+
+#guestbook .bottom { border:1px 0px 1px 0px; solid #80589f; } 
+#guestbook .bottom td { width:"510"; margin:1px ; border:0px}
 
 #guestbook ul		{ width:100%; margin-top:20px }
 #guestbook ul li	{ width:100%; margin-top:10px }
